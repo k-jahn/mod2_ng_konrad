@@ -1,6 +1,6 @@
 export class Member {
-    constructor(parameters) {
-        this.setVals();
+    constructor(raw) {
+        this.setVals(raw);
     }
     first_name: string;
     middle_name: string;
@@ -10,7 +10,11 @@ export class Member {
     state: string;
     votes_with_party_pct: number;
 
-    setVals() {
+    setVals(raw: Object) {
+        // set properties from raw input
+        for (let k: string in raw) {
+            this[k] = raw[k];
+        }
         this.full_name = [this.first_name, this.middle_name, this.last_name].join(' ');
     }
 
