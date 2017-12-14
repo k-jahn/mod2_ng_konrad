@@ -19,11 +19,10 @@ export class MembersService {
     private http: HttpClient
   ) { }
 
-  private membersUrl = '../assets/data/proPublica/113/house.json';
-
-  getMembers(): Observable<Member[]> {
+  getMembers(congress, chamber): Observable<Member[]> {
+    const membersUrl  = `./assets/data/proPublica/${congress}/${chamber}.json`;
     window.console.log('getting members');
-    return this.http.get<ApiResponse>(this.membersUrl)
+    return this.http.get<ApiResponse>(membersUrl)
     .pipe(
         map(r => r.results[0].members.map(m => new Member(m))),
         tap(r => window.console.log('fetched members', r))
@@ -31,3 +30,4 @@ export class MembersService {
   }
 
 }
+

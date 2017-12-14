@@ -5,11 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MembersService } from './members.service';
 import { TableComponent } from './table/table.component';
+import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
+import { InfoBoxComponent } from './info-box/info-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent
+    TableComponent,
+    NavComponent,
+    FooterComponent,
+    InfoBoxComponent
   ],
   imports: [
     BrowserModule,

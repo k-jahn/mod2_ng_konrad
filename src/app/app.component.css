@@ -1,0 +1,6 @@
+#siteWrapper {
+    max-width: 1000px;
+    border: 1px solid black;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.8);
+    padding: 0 1em;
+}

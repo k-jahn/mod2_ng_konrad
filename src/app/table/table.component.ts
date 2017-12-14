@@ -14,12 +14,12 @@ export class TableComponent implements OnInit {
 
   constructor(
     private membersService: MembersService
-  ) { }
+  ) {}
 
   members: Member[];
 
   ngOnInit() {
-    this.membersService.getMembers().subscribe(members => this.members = members);
+    this.membersService.getMembers(113, 'house').subscribe(members => this.members = members);
   }
 
 }
