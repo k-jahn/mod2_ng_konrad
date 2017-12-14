@@ -1,3 +1,14 @@
 table {
     margin: 1em 0;
 }
+
+/*party rows*/
+.rowColorR:hover {
+	background-color: #fbb;
+}
+.rowColorD:hover {
+	background-color: #bbf;
+}
+.rowColorI:hover {
+	background-color: #d6dddd;
+}

@@ -16,8 +16,15 @@
       Votes with Party
     </th>
   </tr>
-  <tr *ngFor="let member of members" class="rowColor{{member.party}}">
-    <td class="col-xs-4"[innerHtml]="member.full_name | link:member.url">
+  <tr *ngFor="let member of members" ="rowColor{{member.party}}">
+    <app-table-cell [val]="member.full_name" [format]="link" [formatPars]="[member.url]"></app-table-cell>
+    <app-table-cell [val]="member.full_name" [format]="link" [formatPars]="[member.url]"></app-table-cell>
+    <app-table-cell [val]="member.full_name" [format]="link" [formatPars]="[member.url]"></app-table-cell>
+    <app-table-cell [val]="member.full_name" [format]="link" [formatPars]="[member.url]"></app-table-cell>
+    <app-table-cell [val]="member.full_name" [format]="link" [formatPars]="[member.url]"></app-table-cell>
+  </tr>
+
+    <!-- <td class="col-xs-4"[innerHtml]="member.full_name | link:member.url">
     </td>
     <td class="col-xs-2"[innerHtml]="member.party | partyIcon">
     </td>
@@ -26,7 +33,6 @@
     <td class="col-xs-2"[innerHtml]="member.seniority | years">
     </td>
     <td class="col-xs-2"[innerHtml]="member.votes_with_party_pct | percentVotesToolTip:member.party_votes:member.total_votes">
-    </td>
-  </tr>
+    </td> -->
 
 </table>
