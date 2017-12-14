@@ -8,3 +8,62 @@ img {
 	left:0;
 	width: 100%;
 }
+
+/*party labels*/
+.partySpan {
+	display: inline-block;
+	height: 1em;
+}
+.partySpan img {
+	height: 100%;
+	width: auto;
+	display: inline-block;
+}
+
+
+/*party rows*/
+.rowColorR:hover {
+	background-color: #fbb;
+}
+.rowColorD:hover {
+	background-color: #bbf;
+}
+.rowColorI:hover {
+	background-color: #d6dddd;
+}
+
+ /*- tooltips*/
+.toolTip {
+	position: relative;
+	display: inline-block;
+	transition: font-weight 0.2s ease-out; 
+}
+
+.toolTip:hover {
+	font-weight: bold;
+}
+	.toolTip .toolTipText {
+    /*visibility: hidden;*/
+    background-color: rgba(0,0,0,0);
+	color: rgba(0,0,0,0);
+    width: 10em;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+	left: 50%;
+	top: -1em;
+	transform: translate(-50%,-100%);
+    z-index: 1;
+    transition: color 0.3s ease-in; 
+    transition: background-color 0.2s ease-out; 
+    pointer-events: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; 
+}
+.toolTip:hover .toolTipText {
+    background-color: rgba(0,0,0,0.8);
+	color: rgba(255,255,255,0.8);
+
+}

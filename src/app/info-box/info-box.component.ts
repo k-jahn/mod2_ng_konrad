@@ -6,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-box.component.css']
 })
 export class InfoBoxComponent implements OnInit {
+  chamber= 'house';
+
 
   constructor() { }
-
   ngOnInit() {
   }
 
