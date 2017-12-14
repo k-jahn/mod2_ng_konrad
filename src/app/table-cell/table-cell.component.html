@@ -1,3 +1,31 @@
-<td>
-  {{val}}
-</td>
+  <ng-container [ngSwitch]="format">
+    <ng-container *ngSwitchCase="'link'">
+      <a href="{{formatPars[0]}}" target="_blank">{{val}}</a>
+    </ng-container>
+    <ng-container *ngSwitchCase="'years'">
+      {{val | years}}
+    </ng-container>
+    <ng-container *ngSwitchCase="'percent'">
+      {{val | percent}}
+    </ng-container>
+    <ng-container *ngSwitchCase="'party'">
+      <span class="partySpan toolTip">
+        <img src="{{url}}">
+        <span class="toolTipText">
+          {{party}}
+        </span>
+      </span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'percentPartyVotesToolTip'">
+      <span class="partySpan toolTip">
+        {{val | percent}}
+        <span class="toolTipText">
+          {{formatPars[0]}} party Votes <br>
+          {{formatPars[1]}} total Votes
+        </span>
+      </span>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      {{val}}
+    </ng-container>
+  </ng-container>
