@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
-import { Member } from '../member';
 import { MembersService } from '../members.service';
-
+import { Member } from '../member';
 
 @Component({
   selector: 'app-table',
@@ -11,18 +12,24 @@ import { MembersService } from '../members.service';
 })
 
 export class TableComponent implements OnInit {
-  @Input() congress: number;
-  @Input() chamber: string;
+  congress: number;
+  chamber: string;
 
 
   constructor(
+    private route: ActivatedRoute,
+    private location: Location,
     private membersService: MembersService
   ) {}
 
-  members: Member[];
+  members: {};
 
   ngOnInit() {
-    this.membersService.getMembers(this.congress, this.chamber).subscribe(members => this.members = members);
+    this.route.paramMap.subscribe((p) => {
+      this.congress = +p.get('congress');
+      this.chamber = p.get('chamber');
+      this.membersService.getMembers(this.congress, this.chamber).subscribe(members => this.members = members);
+    });
   }
 
 }

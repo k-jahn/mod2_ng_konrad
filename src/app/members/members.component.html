@@ -1,19 +1,19 @@
 
 <!-- display for house members -->
 <div class="row"  *ngIf="chamber==='senate'" class="infoBox">
-  <div class="col-xs-8">
+  <div class="col-xs-9">
     <h2>Senators</h2>
     <p>
       First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.
     </p>
   </div>
-  <aside class="col-xs-4">
+  <aside class="col-xs-3">
     <img src="assets/images/senate.png" alt="">
   </aside>
 </div>
 <!-- display for house members -->
 <div class="row"  *ngIf="chamber==='house'" class="infoBox">
-  <div class="col-xs-8">
+  <div class="col-xs-9">
     <h2>
       Congressmen
     </h2>
@@ -23,12 +23,12 @@
       Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative.
     </p>
   </div>
-  <aside class="col-xs-4">
+  <aside class="col-xs-3">
     <img src="assets/images/house.png" alt="">
   </aside>
 </div>
 
 <!-- table -->
-<app-table [congress]="congress" [chamber]="chamber"></app-table>
+<app-table></app-table>
 
 

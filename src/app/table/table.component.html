@@ -1,6 +1,6 @@
 <table class="table">
   <thead>
-    <tr>
+    <tr class="row">
       <th class="col-xs-4">
         Name
       </th>
@@ -19,7 +19,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let member of members" [ngClass]="'rowColor' + member.party">
+    <tr *ngFor="let member of members" [ngClass]="'rowColor' + member.party" class="row">
       <td>
         <app-table-cell [val]="member.full_name" [format]="'link'" [formatPars]="[member.url]"></app-table-cell>
       </td>

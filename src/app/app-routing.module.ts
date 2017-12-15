@@ -9,9 +9,12 @@ import { AttendanceComponent } from './attendance/attendance.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
-  { path: 'members', component: MembersComponent},
-  { path: 'loyalty', component: LoyaltyComponent},
-  { path: 'attendance', component: AttendanceComponent},
+  { path: 'members/:congress/:chamber', component: MembersComponent},
+  { path: 'members', redirectTo: '/members/115/senate'},
+  { path: 'loyalty/:congress/:chamber', component: LoyaltyComponent},
+  { path: 'loyalty', redirectTo: '/loyalty/115/senate'},
+  { path: 'attendance/:congress/:chamber', component: AttendanceComponent},
+  { path: 'attendance', redirectTo: '/attendance/115/senate'},
   { path: '**', redirectTo: '/home'}
 ];
 

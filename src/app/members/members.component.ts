@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import 'rxjs/add/operator/switchMap';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-members',
@@ -13,16 +13,14 @@ export class MembersComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private location: Location
   ) { }
 
-  setPars(params: ParamMap): void {
-    this.congress = Number(params.get('congress'));
-    this.chamber = params.get('chamber');
-    console.log(this.congress, this.chamber);
-  }
   ngOnInit() {
-    this.route.paramMap.subscribe((p) => this.setPars(p));
+    this.route.paramMap.subscribe((p) => {
+      this.congress = +p.get('congress');
+      this.chamber = p.get('chamber');
+    });
   }
 
 }
