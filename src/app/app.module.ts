@@ -1,33 +1,56 @@
+// import from library
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { MembersService } from './members.service';
-import { TableComponent } from './table/table.component';
-import { NavComponent } from './nav/nav.component';
-import { InfoBoxComponent } from './info-box/info-box.component';
+// import custom pipes
 import { PercentPipe } from './pipes/percent.pipe';
 import { YearsPipe } from './pipes/years.pipe';
 import { NThPipe } from './pipes/n-th.pipe';
+
+// import custom services
+import { MembersService } from './members.service';
+import { ParamsService } from './params.service';
+
+// import custom modules
+import { AppRoutingModule } from './/app-routing.module';
+
+// import components
+import { AppComponent } from './app.component';
+import { TableComponent } from './table/table.component';
+import { NavComponent } from './nav/nav.component';
 import { TableCellComponent } from './table-cell/table-cell.component';
+import { MembersComponent } from './members/members.component';
+import { HomeComponent } from './home/home.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { LoyaltyComponent } from './loyalty/loyalty.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     NavComponent,
-    InfoBoxComponent,
     PercentPipe,
     YearsPipe,
     NThPipe,
     TableCellComponent,
+    MembersComponent,
+    HomeComponent,
+    AttendanceComponent,
+    LoyaltyComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [MembersService],
+  providers: [
+    MembersService,
+    ParamsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

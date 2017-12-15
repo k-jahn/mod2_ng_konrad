@@ -2,6 +2,11 @@ body {
 	font-size: 16px;
 	/*background-color: #404 */
 }
+
+main {
+	padding: 1em;
+}
+
 img {
 	display: block;
 	top:0;

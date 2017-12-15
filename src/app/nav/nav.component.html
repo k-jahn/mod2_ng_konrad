@@ -1,13 +1,13 @@
 <div>
-  <a href="#" class="logoWrapper">
+  <a routerLink="/home" class="logoWrapper">
     <img src="/assets/images/logo.png">
   </a>
 </div>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li id="home">
-        <a href="#">Home</a>
+      <li>
+        <a routerLink="/home">Home</a>
       </li>
       <li class="dropdown" id="members">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -16,12 +16,12 @@
         </a>
         <ul class="dropdown-menu inverse-dropdown">
           <li>
-            <a href="#">
+            <a [routerLink]="['/members',{chamber:'senate', congress:congress}]">
               Senate
             </a>
           </li>
-          <li class="house">
-            <a href="#">
+          <li >
+            <a [routerLink]="['/members',{chamber:'senate', congress:congress}]">
               House
             </a>
           </li>
@@ -34,12 +34,12 @@
         </a>
         <ul class="dropdown-menu inverse-dropdown">
           <li class="senate">
-            <a href="#">
+            <a routerLink="/loyalty" [queryParams]="{chamber:senate}">
               Senate
             </a>
           </li>
           <li class="house">
-            <a href="#">
+            <a routerLink="/loyalty" [queryParams]="{chamber:house}">
               House
             </a>
           </li>
@@ -52,12 +52,12 @@
         </a>
         <ul class="dropdown-menu inverse-dropdown">
           <li class="senate">
-            <a href="#">
+            <a routerLink="/attendance" [queryParams]="{chamber:senate}">
               Senate
             </a>
           </li>
           <li class="house">
-            <a href="#">
+            <a routerLink="/attendance" [queryParams]="{chamber:house}">
               House
             </a>
           </li>
@@ -68,7 +68,7 @@
       <li id="congress">
         <a href="javascript: void(0)">
           Congress
-          <select id="selectCongress">
+          <select [(ngModel)]="congress">
             <option value="115">115</option>
             <option value="114">114</option>
             <option value="113">113</option>

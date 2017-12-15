@@ -18,7 +18,7 @@ export class Member {
 
     setVals(raw: Object) {
         // set properties from raw input
-        for (let k: string in raw) {
+        for (let k in raw) {
             this[k] = raw[k];
         }
         // calculate inferred properties
