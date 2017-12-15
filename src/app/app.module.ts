@@ -11,7 +11,6 @@ import { NThPipe } from './pipes/n-th.pipe';
 
 // import custom services
 import { MembersService } from './members.service';
-import { ParamsService } from './params.service';
 
 // import custom modules
 import { AppRoutingModule } from './/app-routing.module';
@@ -48,8 +47,7 @@ import { LoyaltyComponent } from './loyalty/loyalty.component';
     FormsModule
   ],
   providers: [
-    MembersService,
-    ParamsService
+    MembersService
   ],
   bootstrap: [AppComponent]
 })

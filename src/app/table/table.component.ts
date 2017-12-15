@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Member } from '../member';
 import { MembersService } from '../members.service';
@@ -11,6 +11,9 @@ import { MembersService } from '../members.service';
 })
 
 export class TableComponent implements OnInit {
+  @Input() congress: number;
+  @Input() chamber: string;
+
 
   constructor(
     private membersService: MembersService
@@ -19,7 +22,7 @@ export class TableComponent implements OnInit {
   members: Member[];
 
   ngOnInit() {
-    this.membersService.getMembers(113, 'house').subscribe(members => this.members = members);
+    this.membersService.getMembers(this.congress, this.chamber).subscribe(members => this.members = members);
   }
 
 }

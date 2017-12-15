@@ -19,6 +19,7 @@ export class MembersComponent implements OnInit {
   setPars(params: ParamMap): void {
     this.congress = Number(params.get('congress'));
     this.chamber = params.get('chamber');
+    console.log(this.congress, this.chamber);
   }
   ngOnInit() {
     this.route.paramMap.subscribe((p) => this.setPars(p));
