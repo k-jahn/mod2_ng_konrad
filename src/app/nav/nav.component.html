@@ -16,12 +16,12 @@
         </a>
         <ul class="dropdown-menu inverse-dropdown">
           <li>
-            <a routerLink="/members/{{congress}}/senate">
+            <a routerLink="/members/{{select}}/senate">
               Senate
             </a>
           </li>
           <li >
-            <a routerLink="/members/{{congress}}/house">
+            <a routerLink="/members/{{select}}/house">
               House
             </a>
           </li>
@@ -68,8 +68,7 @@
       <li id="congress">
         <a href="javascript: void(0)">
           Congress
-          <select>
-          <!-- <select [(ngModel)]="congress"> -->
+          <select [(ngModel)]="this.select" (change)="this.changeSelect()">
             <option value="115">115</option>
             <option value="114">114</option>
             <option value="113">113</option>

@@ -6,8 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PercentPipe implements PipeTransform {
 
-  transform(value: number, args?: any): string {
-    return value.toFixed(1) + '%';
+  transform(value: any, args?: any): string {
+    if (isNaN(value)) {
+      return '--';
+    }
+    return (+value).toFixed(1) + '%';
   }
 
 }

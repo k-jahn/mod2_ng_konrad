@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
 @Component({
@@ -8,15 +8,26 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  select: string;
+  chamber = 'house';
   congress: number;
+
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
-  ngOnInit() {
-    this.route.paramMap.subscribe((p) => {
-      this.congress = +p.get('congress');
-      console.log(this.congress);
-    });
+  changeSelect(): void {
+    console.log(this.route);
+    this.router.navigate(['../../113/house'], { relativeTo: this.route });
   }
+
+  ngOnInit() {
+    // this.route.paramMap.subscribe((p) => {
+    //   this.congress = +p.get('congress');
+    //   this.chamber = p.get('chamber');
+    // });
+  }
+
+
 }

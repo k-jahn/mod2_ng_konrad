@@ -1,40 +1,42 @@
-<table class="table">
-  <thead>
-    <tr class="row">
-      <th class="col-xs-4">
-        Name
-      </th>
-      <th class="col-xs-2">
-        Party
-      </th>
-      <th class="col-xs-2">
-        State
-      </th>
-      <th class="col-xs-2">
-        Seniority
-      </th>
-      <th class="col-xs-2">
-        Votes with Party
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let member of members" [ngClass]="'rowColor' + member.party" class="row">
-      <td>
-        <app-table-cell [val]="member.full_name" [format]="'link'" [formatPars]="[member.url]"></app-table-cell>
-      </td>
-      <td>
-        <app-table-cell [val]="member.party" [format]="'party'" [formatPars]="[]"></app-table-cell>
-      </td>
-      <td>
-        <app-table-cell [val]="member.state" [format]="''" [formatPars]="[]"></app-table-cell>
-      </td>
-      <td>
-        <app-table-cell [val]="member.seniority" [format]="'years'" [formatPars]="[]"></app-table-cell>
-      </td>
-      <td>
-        <app-table-cell [val]="member.votes_with_party_pct" [format]="'percentPartyVotesToolTip'" [formatPars]="[member.party_votes, member.total_votes]"></app-table-cell>
-      </td>
-    </tr>
-  </tbody>
-</table>
+
+  <table class="table">
+    <thead>
+      <tr class="row">
+        <th class="col-xs-4">
+          Name
+        </th>
+        <th class="col-xs-2">
+          Party
+        </th>
+        <th class="col-xs-2">
+          State
+        </th>
+        <th class="col-xs-2">
+          Seniority
+        </th>
+        <th class="col-xs-2">
+          Votes with Party
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let member of members" [ngClass]="'rowColor' + member.party" class="row">
+        <td>
+          <app-table-cell [val]="member.full_name" [format]="'link'" [formatPars]="[member.url]"></app-table-cell>
+        </td>
+        <td>
+          <app-table-cell [val]="member.party" [format]="'party'" [formatPars]="[]"></app-table-cell>
+        </td>
+        <td>
+          <app-table-cell [val]="member.state" [format]="''" [formatPars]="[]"></app-table-cell>
+        </td>
+        <td>
+          <app-table-cell [val]="member.seniority" [format]="'years'" [formatPars]="[]"></app-table-cell>
+        </td>
+        <td>
+          <app-table-cell [val]="member.votes_with_party_pct" [format]="'percentPartyVotesToolTip'" [formatPars]="[member.party_votes, member.total_votes]"></app-table-cell>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

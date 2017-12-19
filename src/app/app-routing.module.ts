@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'loyalty', redirectTo: '/loyalty/115/senate'},
   { path: 'attendance/:congress/:chamber', component: AttendanceComponent},
   { path: 'attendance', redirectTo: '/attendance/115/senate'},
-  { path: '**', redirectTo: '/home'}
+  // { path: '**', redirectTo: '/home'}
 ];
 
 @NgModule({
